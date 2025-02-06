@@ -1,7 +1,8 @@
 import './search.scss';
-import { ChangeEvent, ReactElement, useEffect, useState } from 'react';
+import { ChangeEvent, ReactElement, useContext, useEffect, useState } from 'react';
 import { Response } from '../../interfaces.ts';
 import { BASE_URL, MIN_SEARCH_LENGTH } from '../../constants/consts.ts';
+import { ResultsContext } from '../../providers/results/results.context.tsx';
 
 function Search(): ReactElement {
   const [search, setSearch] = useState('');
@@ -15,6 +16,7 @@ function Search(): ReactElement {
     results: [],
     error: '',
   });
+  const { setResults } = useContext(ResultsContext);
 
   useEffect(() => {
     async function searchCharacter() {
@@ -23,6 +25,10 @@ function Search(): ReactElement {
     }
     if (search) searchCharacter().then((data: Response) => setResponse(data));
   }, [search]);
+
+  useEffect(() => {
+    setResults(response.results);
+  }, [response, setResults]);
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
     const { target } = event;
