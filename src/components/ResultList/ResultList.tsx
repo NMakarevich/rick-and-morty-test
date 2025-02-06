@@ -15,7 +15,9 @@ function ResultList(): ReactElement {
               className={`result-item ${index < 2 ? 'result-item_big' : 'result-item_small'}`}
               key={item.id}
             >
-              <ResultItem character={item} />
+              <a className={'result-item_link'} href={item.url} target="_blank">
+                <ResultItem character={item} />
+              </a>
             </li>
           ))}
         </ul>

@@ -12,6 +12,10 @@
 .result-item {
   min-width: 300px;
 
+  &_link {
+    text-decoration: none;
+  }
+
   &_small {
     &:nth-child(3n) {
       grid-column: 1 / span 2;
