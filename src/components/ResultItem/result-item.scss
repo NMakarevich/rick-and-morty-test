@@ -42,3 +42,9 @@
 .result-item_big .item {
   padding: 21px 34px 21px 30px;
 }
+
+@media (max-width: 980px) {
+  .result-item_big .item {
+    padding: 20px 34px;
+  }
+}
