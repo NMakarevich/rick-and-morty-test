@@ -1,0 +1,42 @@
+@use "../../constants/styles";
+
+.character-header {
+  display: flex;
+  justify-content: center;
+
+  .container {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .back {
+    margin-right: auto;
+    justify-self: flex-start;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: styles.$color-light
+  }
+
+  .title {
+    margin-right: auto;
+    font-family: styles.$font-montserrat;
+    font-size: 30px;
+    color: styles.$color-main;
+    text-align: center;
+  }
+}
+
+.character-main {
+  display: flex;
+  justify-content: center;
+
+  .container {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+  }
+}

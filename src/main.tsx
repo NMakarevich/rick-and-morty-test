@@ -1,13 +1,17 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
-import App from './App.tsx';
-import ResultsProvider from './providers/results/results.provider.tsx';
+import { BrowserRouter, Route, Routes } from 'react-router';
+import MainPage from './pages/MainPage/MainPage.tsx';
+import CharacterPage from './pages/CharacterPage/CharacterPage.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <ResultsProvider>
-      <App />
-    </ResultsProvider>
+    <BrowserRouter>
+      <Routes>
+        <Route path={'/'} element={<MainPage />} />
+        <Route path={'/:id'} element={<CharacterPage />} />
+      </Routes>
+    </BrowserRouter>
   </StrictMode>,
 );

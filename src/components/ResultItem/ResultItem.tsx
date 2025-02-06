@@ -1,6 +1,7 @@
 import './result-item.scss';
 import { Character } from '../../interfaces.ts';
 import { ReactElement } from 'react';
+import { Link } from 'react-router';
 
 interface Props {
   character: Character;
@@ -11,7 +12,7 @@ function ResultItem(props: Props): ReactElement {
   const localizedDate = new Date(character.created).toLocaleDateString();
 
   return (
-    <div className={'item'}>
+    <Link to={`/${character.id}`} className={'item'}>
       <h2 className={'item-title'}>
         {character.name} - {character.species}
       </h2>
@@ -23,7 +24,7 @@ function ResultItem(props: Props): ReactElement {
           Created: <span>{localizedDate}</span>
         </p>
       </div>
-    </div>
+    </Link>
   );
 }
 

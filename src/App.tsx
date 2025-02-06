@@ -1,10 +1,11 @@
 import './App.scss';
 import Search from './components/Search/Search.tsx';
 import ResultList from './components/ResultList/ResultList.tsx';
+import ResultsProvider from './providers/results/results.provider.tsx';
 
 function App() {
   return (
-    <>
+    <ResultsProvider>
       <header className="app-header">
         <div className="container">
           <Search />
@@ -15,7 +16,7 @@ function App() {
           <ResultList />
         </div>
       </main>
-    </>
+    </ResultsProvider>
   );
 }
 
