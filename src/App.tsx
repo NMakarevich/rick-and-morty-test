@@ -1,5 +1,6 @@
 import './App.scss';
 import Search from './components/Search/Search.tsx';
+import ResultList from './components/ResultList/ResultList.tsx';
 
 function App() {
   return (
@@ -10,7 +11,9 @@ function App() {
         </div>
       </header>
       <main className="app-main">
-        <div className="container"></div>
+        <div className="container">
+          <ResultList />
+        </div>
       </main>
     </>
   );
